@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Eco-Friendly Plants Shop</title>
+  <meta name="description" content="Eco-Friendly Plants - Sustainable Living">
+  <meta name="keywords" content="eco-friendly plants, sustainable living, plants, nature, environment">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #310542;
+    }
+
+    /* Navbar Style */
+    .navmenu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navmenu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .navmenu li {
+      margin: 0 15px;
+    }
+
+    .navmenu a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .navmenu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    /* Page Styling */
+    .page {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: backgroundChange 9s infinite;
+    }
+
+    .page h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .page p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    /* Background Image Animation */
+    @keyframes backgroundChange {
+      0% {
+        background-image: url('assets/img/img1.jpg');
+      }
+
+      33% {
+        background-image: url('assets/img/img2.jpg');
+      }
+
+      66% {
+        background-image: url('assets/img/img3.jpg');
+      }
+
+      100% {
+        background-image: url('assets/img/img4.jpg');
+      }
+    }
+
+    /* Products Grid - 3 columns per row */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .product {
+      text-align: center;
+      position: relative;
+    }
+
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      font-size: 22px;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .product p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    .price {
+      font-size: 20px;
+      color: #00b300;
+      margin-top: 10px;
+    }
+
+    .add-to-cart {
+      background-color: #00b300;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .add-to-cart:hover {
+      background-color: #007d00;
+    }
+
+    /* QR Code on Image */
+    .qr-code {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      background-image: url('assets/img/code.png'); /* Replace with actual QR code image */
+      background-size: cover;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navmenu">
+    <!-- Menu Links -->
+    <div>
+      <a href="home.html">Home</a>
+      <a href="shop.html">Plantes</a>
+      <a href="reward.html">Rewards</a>
+      <a href="about1.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Navbar Icons (Sign Up & Cart) -->
+    <div class="icons">
+      <a href="sign.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+      <a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+    </div>
+  </div>
+
+  <!-- Page with Background Image Slider -->
+  <div class="page">
+    <div>
+      <h1>Shop</h1>
+      <p>Apportez la nature chez vous avec nos plantes écologiques. Chaque plante est soigneusement sélectionnée pour sa capacité à purifier l'air et à prospérer dans divers environnements. Profitez de nos promotions et commencez à verdir votre espace aujourd'hui !
+       Scanner le code QR sur chaque produit pour plus d'informations et découvrir nos offres spéciales</p>
+    </div>
+  </div>
+
+  <!-- Products Grid with 6 products -->
+  <div class="products-grid" id="products-grid">
+    <!-- Product 1 -->
+    <div class="product" data-price="19.99">
+      <img src="assets/img/1.jpg" alt="Plant 1">
+      <div class="qr-code" onclick="window.location.href='plant1-info.html';"></div>
+      <h3>Snake Plant</h3>
+      <p>Easy to care for, this plant purifies the air and adds beauty to your home.</p>
+      <p class="price">$19.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product" data-price="22.99">
+      <img src="assets/img/p1.jpg" alt="Plant 2">
+      <div class="qr-code" onclick="window.location.href='plant2-info.html';"></div>
+      <h3>Aloe Vera</h3>
+      <p>Known for its healing properties, Aloe Vera is great for both indoors and outdoors.</p>
+      <p class="price">$22.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product" data-price="15.99">
+      <img src="assets/img/p2.jpg" alt="Plant 3">
+      <div class="qr-code" onclick="window.location.href='plant3-info.html';"></div>
+      <h3>Spider Plant</h3>
+      <p>Low maintenance and perfect for purifying your home's air.</p>
+      <p class="price">$15.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product" data-price="18.50">
+      <img src="assets/img/p3.jpg" alt="Plant 4">
+      <div class="qr-code" onclick="window.location.href='plant4-info.html';"></div>
+      <h3>Peace Lily</h3>
+      <p>Elegant and air-purifying, this plant is perfect for any indoor space.</p>
+      <p class="price">$18.50</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product" data-price="25.99">
+      <img src="assets/img/p4.jpg" alt="Plant 5">
+      <div class="qr-code" onclick="window.location.href='plant5-info.html';"></div>
+      <h3>Ficus Plant</h3>
+      <p>A beautiful and hardy plant that grows well indoors and outdoors.</p>
+      <p class="price">$25.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- Product 6 -->
+    <div class="product" data-price="30.99">
+      <img src="assets/img/p5.jpg" alt="Plant 6">
+      <div class="qr-code" onclick="window.location.href='plant6-info.html';"></div>
+      <h3>Monstera</h3>
+      <p>This tropical beauty thrives in indirect light and adds a bold touch to your space.</p>
+      <p class="price">$30.99</p>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+</body>
+
+</html>

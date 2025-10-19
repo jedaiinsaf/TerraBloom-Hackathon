@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Récompenses | Site Éco-Responsable</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <style>
+    /* Styles généraux */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Navbar Style */
+    .navmenu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navmenu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .navmenu li {
+      margin: 0 15px;
+    }
+
+    .navmenu a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .navmenu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    /* Page Rewards */
+    .rewards-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      background-color: #f4f4f4;
+      min-height: 100vh;
+    }
+
+    .rewards-page h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .rewards-content {
+      max-width: 800px;
+      text-align: center;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    .rewards-content p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .rewards-content h2 {
+      font-size: 28px;
+      color: #333;
+      margin-top: 30px;
+      font-weight: 600;
+    }
+
+    .reward-actions {
+      margin-top: 30px;
+    }
+
+    .reward-actions input[type="file"] {
+      margin: 10px 0;
+    }
+
+    .reward-actions button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .reward-actions button:hover {
+      background-color: #45a049;
+    }
+
+    /* Image styling */
+    .rewards-page img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navmenu">
+    <!-- Menu Links -->
+    <div>
+      <a href="home.html">Home</a>
+      <a href="shop.html">Plantes</a>
+      <a href="reward.html">Rewards</a>
+      <a href="about1.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Navbar Icons (Sign Up & Cart) -->
+    <div class="icons">
+      <a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+      <a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+    </div>
+  </div>
+
+  <!-- Page Rewards -->
+  <div class="rewards-page">
+    <h1> TerraBloom</h1>
+    <h1>Gagnez des Récompenses en Plantant!</h1>
+
+    <div class="rewards-content">
+      <p>
+        Nous croyons que chaque plante que vous plantez contribue à protéger l'environnement ! C'est pourquoi nous récompensons les clients qui achètent une plante, la plantent, et partagent une photo de leur arbre planté.
+      </p>
+      <h2>Comment ça fonctionne :</h2>
+      <p>
+        1. Achetez une plante dans notre boutique. <br>
+        2. Plantez votre arbre dans votre jardin ou un parc proche. <br>
+        3. Prenez une photo de votre arbre planté et envoyez-la-nous. <br>
+        4. Recevez des points que vous pouvez échanger contre des récompenses comme des cadeaux éco-responsables, des réductions, et bien plus encore !
+      </p>
+      <div class="reward-actions">
+        <h3>Soumettez votre photo et gagnez des points</h3>
+        <input type="file" accept="image/*" id="photoUpload" required>
+        <button type="submit">Envoyer la photo</button>
+      </div>
+      <h2>Pourquoi participer ?</h2>
+      <p>
+        En participant à ce programme de récompenses, vous contribuez non seulement à verdir la planète, mais vous gagnez également des récompenses précieuses qui soutiennent un avenir durable. Ensemble, nous pouvons faire la différence !
+      </p>
+    </div>
+  </div>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+
+</html>

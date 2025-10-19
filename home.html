@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Site Eco-Friendly</title>
+  <meta name="description" content="Eco-Friendly Products - Sustainable Living">
+  <meta name="keywords" content="eco-friendly, sustainable, green products, nature, environment">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+  <!-- Main CSS -->
+  <style>
+    /* Styles généraux */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background:#4CAF50;
+    }
+
+       .navmenu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navmenu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px; /* Limite la largeur maximale de la barre */
+    }
+
+    .navmenu li {
+      margin: 0 15px; /* Espacement entre les éléments */
+    }
+
+    .navmenu a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .navmenu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+
+    /* Description de la page d'accueil */
+    .home-description {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    /* Barre de recherche */
+    .search-bar-container {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-bar-container input,
+    .search-bar-container button {
+      padding: 10px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+    }
+
+    .search-bar-container input {
+      width: 300px;
+    }
+
+    .search-bar-container button {
+      background: green;
+      color: white;
+    }
+
+    /* Styles du chatbot */
+    .chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Section vidéo -->
+
+
+    <div class="navmenu">
+      <!-- Menu Links -->
+      <div>
+        <a href="home.html">Home</a>
+        <a href="shop.html">Plantes</a>
+        <a href="reward.html">Rewards</a>
+        <a href="about1.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <!-- Navbar Icons (Sign Up & Cart) -->
+      <div class="icons">
+        <a href="sign.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+        <a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      </div>
+    </div>
+
+    <!-- Description -->
+<div class="home-description">
+  <h2>Bienvenue sur TerraBloom</h2>
+  <p>Plantez pour demain. Découvrez nos plantes et engagez-vous pour un avenir durable.</p>
+</div>
+
+
+    <!-- Barre de recherche -->
+    <div class="search-bar-container">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <!-- Bouton pour ouvrir la page chatbot -->
+  <a href="chatbot.html">
+    <button class="chatbot-toggle">💬</button>
+  </a>
+
+</body>
+
+</html>

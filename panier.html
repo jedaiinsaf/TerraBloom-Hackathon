@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Panier | Site Eco-Friendly</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <style>
+    /* Styles généraux */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Navbar Style */
+    .navmenu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navmenu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .navmenu li {
+      margin: 0 15px;
+    }
+
+    .navmenu a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .navmenu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    /* Page Panier */
+    .cart-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      background-color: #f4f4f4;
+      min-height: 100vh;
+    }
+
+    .cart-page h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .cart-content {
+      max-width: 1000px;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .cart-item:hover {
+      background-color: #f9f9f9;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cart-item h3,
+    .cart-item p {
+      margin: 0;
+    }
+
+    .quantity-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .quantity-wrapper input {
+      width: 50px;
+      padding: 5px;
+      text-align: center;
+      margin: 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .cart-item button {
+      background-color: #ff6347;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .cart-item button:hover {
+      background-color: #e55347;
+    }
+
+    .cart-summary {
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    .cart-summary h3 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .cart-summary button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .cart-summary button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navmenu">
+    <div>
+      <a href="home.html">Home</a>
+      <a href="shop.html">Plantes</a>
+      <a href="reward.html">Rewards</a>
+      <a href="about1.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="icons">
+      <a href="sign.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+      <a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+    </div>
+  </div>
+
+  <!-- Page Panier -->
+  <div class="cart-page">
+    <h1>Your Cart</h1>
+    <div class="cart-content">
+      <div class="cart-items">
+        <!-- Cart Item 1 -->
+        <div class="cart-item">
+          <img src="https://via.placeholder.com/100" alt="Plant 1">
+          <div class="cart-item-details">
+            <h3>Plant Name 1</h3>
+            <p>Price: $20.00</p>
+            <div class="quantity-wrapper">
+              <label for="quantity1">Quantity:</label>
+              <input type="number" id="quantity1" value="1" min="1">
+            </div>
+          </div>
+          <button>Remove</button>
+        </div>
+
+        <!-- Cart Item 2 -->
+        <div class="cart-item">
+          <img src="https://via.placeholder.com/100" alt="Plant 2">
+          <div class="cart-item-details">
+            <h3>Plant Name 2</h3>
+            <p>Price: $30.00</p>
+            <div class="quantity-wrapper">
+              <label for="quantity2">Quantity:</label>
+              <input type="number" id="quantity2" value="1" min="1">
+            </div>
+          </div>
+          <button>Remove</button>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <h3>Total: $50.00</h3>
+        <button>Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+
+</html>

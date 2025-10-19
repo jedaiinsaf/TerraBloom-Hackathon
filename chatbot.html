@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Friendly Chatbot</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <!-- Styles CSS -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #064413;
+    }
+
+    .navmenu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navmenu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px; /* Limite la largeur maximale de la barre */
+    }
+
+    .navmenu li {
+      margin: 0 15px; /* Espacement entre les éléments */
+    }
+
+    .navmenu a {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .navmenu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+
+    /* Chatbot styles */
+    .chatbot-container {
+      max-width: 600px;
+      width: 90%;
+      height: 80vh;
+      margin: 100px auto; /* Adjusted for the navbar */
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chatbot-header {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 22px;
+      font-weight: bold;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .chatbot-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    .message.user {
+      background: #4CAF50;
+      color: white;
+      margin-left: auto;
+    }
+
+    .message.bot {
+      background: #ddd;
+      color: #333;
+      margin-right: auto;
+    }
+
+    .chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chatbot-input input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .chatbot-input button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      cursor: pointer;
+      border-bottom-right-radius: 10px;
+      font-size: 16px;
+    }
+
+    .chatbot-input button:hover {
+      background: #45a049;
+    }
+
+    .bot-link {
+      color: #4CAF50;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Menu -->
+    <div class="navmenu">
+      <!-- Menu Links -->
+      <div>
+        <a href="home.html">Home</a>
+        <a href="shop.html">Plantes</a>
+        <a href="reward.html">Rewards</a>
+        <a href="about1.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <!-- Navbar Icons (Sign Up & Cart) -->
+      <div class="icons">
+        <a href="sign.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+        <a href="panier.html"><i class="fas fa-shopping-cart"></i> Panier</a>
+      </div>
+    </div>
+
+  <!-- Chatbot Container -->
+  <div class="chatbot-container">
+    <!-- Chatbot Header -->
+    <div class="chatbot-header">
+      Chat with Eco-Friendly Bot
+    </div>
+
+    <!-- Chatbot Messages -->
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="message bot">
+        Hello! How can I assist you with your plant shopping today? 🌱
+      </div>
+    </div>
+
+    <!-- Chatbot Input -->
+    <div class="chatbot-input">
+      <input type="text" id="chatbotInput" placeholder="Type your message here...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Script JS -->
+  <script>
+    function sendMessage() {
+      const inputField = document.getElementById('chatbotInput');
+      const messagesContainer = document.getElementById('chatbotMessages');
+      const userMessage = inputField.value.trim();
+
+      if (userMessage) {
+        // Add user's message
+        const userMessageElement = document.createElement('div');
+        userMessageElement.classList.add('message', 'user');
+        userMessageElement.textContent = userMessage;
+        messagesContainer.appendChild(userMessageElement);
+
+        // Add bot's response
+        const botMessageElement = document.createElement('div');
+        botMessageElement.classList.add('message', 'bot');
+        botMessageElement.innerHTML = getBotResponse(userMessage);
+        messagesContainer.appendChild(botMessageElement);
+
+        // Clear input field and scroll to the bottom
+        inputField.value = '';
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+    }
+
+    function getBotResponse(message) {
+      const lowerCaseMessage = message.toLowerCase();
+
+      // Bot responses for plant shopping
+      if (lowerCaseMessage.includes('plants') || lowerCaseMessage.includes('recommend')) {
+        return "We offer a wide variety of plants including indoor, outdoor, and exotic options! Check our <a href='shop.html' class='bot-link'>Shop</a> for more.";
+      } else if (lowerCaseMessage.includes('delivery')) {
+        return "We deliver plants across the country in eco-friendly packaging. Delivery is free for orders over $50!";
+      } else if (lowerCaseMessage.includes('rewards')) {
+        return "Earn points with every purchase! You can redeem points for discounts or free plants. Learn more on our <a href='reward.html' class='bot-link'>Rewards Page</a>.";
+      } else if (lowerCaseMessage.includes('care')) {
+        return "For plant care tips, visit our <a href='care.html' class='bot-link'>Plant Care Guide</a>.";
+      } else {
+        return "I'm here to help! Can you please clarify your question? 😊";
+      }
+    }
+  </script>
+</body>
+
+</html>
+
